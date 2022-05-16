@@ -18,3 +18,9 @@ wifi:
 captive_portal:
 
 improv_serial:
+
+api:
+  password: ""
+
+ota:
+  password: ""

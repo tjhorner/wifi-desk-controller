@@ -1,0 +1,34 @@
+name: Build Stock Firmware
+on:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    name: Build Firmware
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        desk_brand:
+          - uplift_v2
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-python@v2
+        with:
+          python-version: "3.9"
+          cache: "pip"
+
+      - name: Install ESPHome
+        run: pip install --user esphome
+      
+      - name: Compile Firmware
+        working-directory: firmware
+        run: ./make-stock-bin.sh ${{ matrix.desk_brand }}
+
+      - name: Upload Firmware
+        uses: skx/github-action-publish-binaries@release-1.3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          args: "firmware/bin/*.bin"

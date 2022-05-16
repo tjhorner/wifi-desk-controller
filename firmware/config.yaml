@@ -1,0 +1,15 @@
+esphome:
+  name: standing-desk
+  platform: ESP8266
+  board: d1_mini
+
+packages:
+  standing_desk: github://tjhorner/esphome-standing-desk/configs/template.yaml
+  desk_config: github://tjhorner/esphome-standing-desk/configs/desks/DESK_BRAND.yaml
+
+wifi:
+  ap:
+    ssid: "Standing Desk Controller"
+    password: "hunter2hunter2"
+
+captive_portal:

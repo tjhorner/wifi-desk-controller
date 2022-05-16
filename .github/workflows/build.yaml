@@ -11,6 +11,7 @@ jobs:
       matrix:
         desk_brand:
           - uplift_v2
+          - fully_jarvis
     steps:
       - uses: actions/checkout@v2
 

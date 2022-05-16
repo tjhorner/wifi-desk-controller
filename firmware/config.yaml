@@ -3,6 +3,9 @@ esphome:
   platform: ESP8266
   board: d1_mini
 
+logger:
+  level: DEBUG
+
 packages:
   standing_desk: github://tjhorner/esphome-standing-desk/configs/template.yaml
   desk_config: github://tjhorner/esphome-standing-desk/configs/desks/DESK_BRAND.yaml
@@ -13,3 +16,5 @@ wifi:
     password: "hunter2hunter2"
 
 captive_portal:
+
+improv_serial:

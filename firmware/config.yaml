@@ -2,12 +2,19 @@ esphome:
   name: standing-desk
   platform: ESP8266
   board: d1_mini
+  project:
+    name: tj.horner.wifi-desk-controller
+    version: "0.0.7"
 
 logger:
   level: DEBUG
 
+dashboard_import:
+  package_import_url: github://tjhorner/wifi-desk-controller/firmware/config.yaml
+
 packages:
   standing_desk: github://tjhorner/esphome-standing-desk/configs/template.yaml
+  # Make sure to change DESK_BRAND to your desk's brand (either uplift_v2 or fully_jarvis)
   desk_config: github://tjhorner/esphome-standing-desk/configs/desks/DESK_BRAND.yaml
 
 wifi:

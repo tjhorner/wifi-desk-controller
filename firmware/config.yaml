@@ -3,8 +3,8 @@ esphome:
   platform: ESP8266
   board: d1_mini
   project:
-    name: tj.horner.wifi-desk-controller
-    version: "0.0.7"
+    name: tj_horner.wifi_desk_controller
+    version: "0.0.8"
 
 logger:
   level: DEBUG

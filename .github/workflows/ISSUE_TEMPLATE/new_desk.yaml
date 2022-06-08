@@ -1,0 +1,46 @@
+name: New Desk Request
+description: Request that a new standing desk be verified-compatible
+title: "New Desk Request: "
+labels: ["new desk"]
+assignees:
+  - tjhorner
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please make sure you have read the
+        [wiki page](https://github.com/tjhorner/wifi-desk-controller/wiki/Desk-Compatibility)
+        on desk compatibility before filling this out.
+  - type: input
+    id: desk-model
+    attributes:
+      label: Desk Model
+      description: Which model of desk are you requesting? Include the brand and model number.
+      placeholder: UPLIFT v2
+    validations:
+      required: true
+  - type: checkboxes
+    id: physical-compatibility
+    attributes:
+      label: Physical and Electrical Compatibility
+      description: Have you verified that this desk is physically and electrically compatible?
+      options:
+        - label: Desk is physically compatible (uses RJ45)
+        - label: Desk is electrically compatible (+5V is on pin 5, GND is on pin 3)
+  - type: dropdown
+    id: firmware-compatibility
+    attributes:
+      label: Firmware Compatibility
+      description: Have you verified that this desk works with any existing stock firmware?
+      options:
+        - No, I don't have a desk controller to test with
+        - No, none of the stock firmwares work
+        - Yes, it works with UPLIFT v2 firmware
+        - Yes, it works with Fully Jarvis firmware
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Reverse Engineering Work
+      description: Have you done any reverse engineering work on this desk? If so, please describe it here.

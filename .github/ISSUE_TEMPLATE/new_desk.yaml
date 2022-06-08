@@ -8,9 +8,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Please make sure you have read the
-        [wiki page](https://github.com/tjhorner/wifi-desk-controller/wiki/Desk-Compatibility)
-        on desk compatibility before filling this out.
+        Please make sure you have read the [wiki page](https://github.com/tjhorner/wifi-desk-controller/wiki/Desk-Compatibility) on desk compatibility before filling this out.
   - type: input
     id: desk-model
     attributes:

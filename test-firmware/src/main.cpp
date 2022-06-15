@@ -16,8 +16,8 @@ void setup() {
 #ifdef TEST_HOST
   Serial.println("Initializing test host...");
 
-  for (int i = 0; i < sizeof(pins_to_test); i++) {
-    pinMode(pins_to_test[i], INPUT);
+  for (int &pin : pins_to_test) {
+    pinMode(pin, INPUT);
   }
 
   pinMode(LED_BUILTIN, OUTPUT);
@@ -25,12 +25,12 @@ void setup() {
 
   delay(100);
 
-  for (int i = 0; i < sizeof(pins_to_test); i++) {
+  for (int &pin : pins_to_test) {
     Serial.print("Waiting for pin ");
-    Serial.print(pins_to_test[i] + 1);
+    Serial.print(pin);
     Serial.println();
 
-    while (digitalRead(pins_to_test[i]) == LOW) {
+    while (digitalRead(pin) == LOW) {
       delay(50);
     }
 
@@ -41,23 +41,23 @@ void setup() {
 #else
   Serial.println("Initializing test target...");
 
-  for (int i = 0; i < sizeof(pins_to_test); i++) {
-    pinMode(pins_to_test[i], OUTPUT);
-    digitalWrite(pins_to_test[i], LOW);
+  for (int &pin : pins_to_test) {
+    pinMode(pin, OUTPUT);
+    digitalWrite(pin, LOW);
   }
 #endif
 }
 
 void loop() {
 #ifdef TEST_TARGET
-  for (int i = 0; i < sizeof(pins_to_test); i++) {
+  for (int &pin : pins_to_test) {
     Serial.print("Pulsing pin ");
-    Serial.print(pins_to_test[i] + 1);
+    Serial.print(pin);
     Serial.println();
 
-    digitalWrite(pins_to_test[i], HIGH);
+    digitalWrite(pin, HIGH);
     delay(1000);
-    digitalWrite(pins_to_test[i], LOW);
+    digitalWrite(pin, LOW);
   }
 #endif
 }

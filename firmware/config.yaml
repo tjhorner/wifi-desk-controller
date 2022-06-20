@@ -19,10 +19,6 @@ packages:
   desk_config: github://tjhorner/esphome-standing-desk/configs/desks/DESK_BRAND.yaml
 
 wifi:
-  ssid: "ssid_that_should_always_fail"
-  # Required to support hidden networks.
-  # Best to remove it if you don't have one.
-  fast_connect: true
   ap:
     ssid: "Standing Desk Controller"
     password: "hunter2hunter2"

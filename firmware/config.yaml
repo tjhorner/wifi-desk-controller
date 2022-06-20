@@ -14,6 +14,7 @@ dashboard_import:
 
 packages:
   standing_desk: github://tjhorner/esphome-standing-desk/configs/template.yaml
+  presets_addon: github://tjhorner/esphome-standing-desk/configs/addons/presets.yaml
   # Make sure to change DESK_BRAND to your desk's brand (either uplift_v2 or fully_jarvis)
   desk_config: github://tjhorner/esphome-standing-desk/configs/desks/DESK_BRAND.yaml
 

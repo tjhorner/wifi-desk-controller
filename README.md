@@ -10,6 +10,15 @@ You may also find the associated [ESPHome custom component](https://github.com/t
 
 ## Stock Firmware
 
+The stock firmware is ESPHome-based, and contains a bunch of components that are useful for setup. It exposes these entities:
+
+- Desk Height: reports desk height as reported by control box
+- Target Desk Height: changes the target desk height
+- Desk Preset 1: sets the desk height to preset 1
+- Desk Preset 2: sets the desk height to preset 2
+- Desk Preset 3: sets the desk height to preset 3
+- Desk Preset 4: sets the desk height to preset 4
+
 The stock firmware is automatically built for each supported desk on release. There is a [GitHub Actions workflow](.github/workflows/build.yaml) which handles this. The `make-stock-bin` script replaces the `DESK_BRAND` in the [stock config.yaml](firmware/config.yaml) with the appropriate config and builds it. It runs this script for each of the supported desk brands in the build matrix, then uploads a release artifact.
 
 If you would like to contribute compatibility for a new desk, you first need to submit a pull request to [this repo](https://github.com/tjhorner/esphome-standing-desk/tree/master/configs/desks) which adds a config file for the desk (and, if necessary, a new protocol decoder for it). See [Desk Compatibility](https://github.com/tjhorner/wifi-desk-controller/wiki/Desk-Compatibility) for more info on adding a new desk brand.
